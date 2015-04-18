@@ -11,7 +11,8 @@ public class ShoppingCart {
 	}
 
 	@SuppressWarnings("unchecked")
-	//TODO: why clone?
+	//TODO: both clone and CopyOnWriteArrayList do not seem to be needed here at all. If you want to make list returned from
+	//here immutable, do so via java.util.Collections.unmodifiableList
 	public CopyOnWriteArrayList<CD> getItems() {
 		return (CopyOnWriteArrayList<CD>) items.clone();
 	}
