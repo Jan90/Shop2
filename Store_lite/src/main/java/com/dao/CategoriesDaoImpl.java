@@ -18,6 +18,7 @@ public class CategoriesDaoImpl extends AbstractDao implements CategoriesDao {
 		connection = DBConnection.getConnection();
 	}
 
+	//TODO: DAO should not know how exactly is it used on the presentation side. No Drop-downs here. Same for the service.
 	public List<String> populateDropDownList(String type) {
 		List<String> genres = new ArrayList<String>();
 		String query = "SELECT DISTINCT genre  FROM CDs where type=?";
@@ -29,6 +30,7 @@ public class CategoriesDaoImpl extends AbstractDao implements CategoriesDao {
 				genres.add(resultSet.getString(1));
 			}
 		} catch (SQLException e) {
+			//TODO: swallown exception nono
 			e.printStackTrace();
 		} finally {
 			resourcesCloser(preparedStatement, statement, resultSet);

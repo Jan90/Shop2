@@ -37,6 +37,7 @@ public class DBConnection {
 				Statement st = connection.createStatement();
 				st.execute(theString);
 			} catch (ClassNotFoundException e) {
+				//TODO: swallown exceptions are SIN. Never do that.
 				e.printStackTrace();
 			} catch (SQLException e) {
 				e.printStackTrace();

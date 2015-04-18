@@ -9,6 +9,7 @@ public class Store {
 	public static List<CD> productList;
 
 	public static List<CD> getProductList() {
+		//TODO: why to not simply initialize the product list inline and never have nulls?
 		if (productList == null) {
 			productList = new ArrayList<CD>();
 		}

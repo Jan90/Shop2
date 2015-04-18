@@ -16,6 +16,7 @@ import com.model.Store;
 
 public class CDDaoImpl extends AbstractDao implements CDDao {
 	private Connection connection;
+	//TODO: statement, result set and prepared statement should not be class members but instead should be method local variables.
 	private Statement statement;
 	private ResultSet resultSet;
 	private PreparedStatement preparedStatement;
@@ -24,6 +25,7 @@ public class CDDaoImpl extends AbstractDao implements CDDao {
 		connection = DBConnection.getConnection();
 	}
 
+	//TODO: huge amount of repetition this and next two methods. Utter violation of the DRY rule. Generalize and reuse them.
 	public Collection<CD> getProductList() {
 		try {
 			statement = connection.createStatement();
@@ -91,6 +93,7 @@ public class CDDaoImpl extends AbstractDao implements CDDao {
 
 	public Collection<CD> getNewProducts() {
 		List<String> genres = new ArrayList<String>();
+		//TODO: you don't need subquery here.
 		String query = "SELECT * FROM ("
 				+ "SELECT * FROM CDs "
 				+ "ORDER BY timestamp  DESC "

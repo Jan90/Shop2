@@ -9,7 +9,9 @@ import com.dao.CategoriesDaoImpl;
 import com.dao.DBConnection;
 import com.model.CD;
 
+//TODO: this server doesn't seem to do anything.
 public class StoreServiceImpl implements StoreService {
+	//TODO: not used.
 	Connection connection;
 	private CDDaoImpl cdDaoImpl = new CDDaoImpl();
 	private CategoriesDaoImpl categoriesDaoImpl = new CategoriesDaoImpl();
